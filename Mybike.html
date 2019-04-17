@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+	<head>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <link rel="stylesheet" href="Css/Mybike.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="icon" type="image/png" href="Images/Logobas.png" />
+        <title>MyBike, réservez votre vélo en un clic ! - Projet 3 Openclassrooms.</title>
+        <meta name="description" content="La location de vélo n'a jamais été aussi facile. Page HTML5, CSS3 et Javascript." />
+	</head>
+
+    <body>
+        <header>
+            <div id="bloclogotop">
+                <img id="logotop" src="Images/Mybikelogo.png" alt="Logo MyBike" />
+            </div>
+            <div id="bloctitre">
+                <h1>Location de vélos interactive</h1>
+            </div>
+        </header>
+        
+        <section>
+            <div id ="slider">
+                <div id="imagesslider">
+                    <figure><img class="photosslider" src="Images/Slide1.jpg" alt="Réservez votre vélo en un clic !" /></figure>
+                    <figure><img class="photosslider" src="Images/Slide2.jpg" alt="Choisissez la station de votre choix." /></figure>
+                    <figure><img class="photosslider" src="Images/Slide3.jpg" alt="Remplissez les informations." /></figure>
+                    <figure><img class="photosslider" src="Images/Slide4.jpg" alt="C'est parti !" /></figure>
+                </div>
+                <div id="boutonsslider">
+                    <span class="boutons" id="boutongauche"><i class="fas fa-chevron-left"></i></span>
+                    <span class="boutons" id="boutondroite"><i class="fas fa-chevron-right"></i></span>
+                </div>
+                <div id="statutslider">
+                    <span class="cercles" id="cercle1"></span>
+                    <span class="cercles"></span>
+                    <i id="pause" class="fas fa-pause controles"></i>
+                    <i id="play" class="fas fa-play controles invisible"></i>
+                    <span class="cercles"></span>
+                    <span class="cercles"></span>
+                </div>
+            </div>
+
+            <div id="contenu">
+                <div id="blocgauche">
+                    <div class="blocs" id="blocmap">
+                    </div>
+                    <h2 id="recapitulatif" class="invisible">Récapitulatif</h2>
+                    <div class="blocs invisible" id="messagerecapitulatif">
+                        <img class="logosbas" id="logobas1" src="Images/Logobas.png" alt="Logo vélo" />
+                        <p>
+                            Vélo réservé à la station <span class="nomsstation js" id="nomstation2"></span> par <span id="nomreservant" class="js"></span>.<br />
+                            Temps restant : <span id="compteur" class="js"></span>.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="blocdroite">
+                    <div class="blocs invisible" id="reservation">
+                        <p>
+                            Station<br />
+                            <span class="nomsstation" id="nomstation"></span><br />
+                            <span id="statutstation"></span>
+                        </p>
+                        <p id="adressestation">
+                        </p>
+                        <p>
+                            <span class="js" id="nombreplacesdisponibles"></span> places disponibles.<br />
+                            <span class="js" id="nombrevelosdisponibles"></span> vélos disponibles. <span id="indicReservation" class="js invisible">(1 réservé)</span><br />
+                            <form id="formulaire">
+                                <p>
+                                    <input type="text" id="nom" name="nom" placeholder="Nom*" required>
+                                </p>
+                                <p>
+                                    <input type="text" id="prenom" name="prenom" placeholder="Prénom*" required><br />
+                                </p>
+                                <p>
+                                    <input type="submit" id="boutonsubmit" class="boutonsresa" value="Réserver">
+                                </p>
+                            </form>
+                    </div>
+                    <div class="blocs" id="signature">
+                        <p>
+                            Signature <img src="Images/Crayon.png" alt="Logo d'un crayon" id="logocrayon" />
+                        </p>
+                        <div id="conteneurcanvas">
+                            <canvas id="canvas" width="1000" height="1000">
+                                Votre navigateur est incompatible avec le canvas !
+                            </canvas>
+                        </div>
+                        <button id="boutoncanvasconfirmer" class="boutonsresa invisible">Confirmer la réservation</button>
+                        <button id="boutoncanvasreset" class="boutonsresa invisible" >Reset signature</button>
+                    </div>
+                    <div class="blocs invisible" id="confirmation">
+                        <img class="logosbas" src="Images/Logobas.png" alt="Logo vélo" id="logobas2" /><br />
+                        <p id="messageconfirmation">
+                        </p>
+                        <button id="boutonannulerreservation" class="boutonsresa">Annuler la réservation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="Js/Slider.js"></script>
+        <script src="Js/DonneesStations.js"></script>
+        <script src="Js/DonneesReservation.js"></script>
+        <script src="Js/Markerclusterer.js"></script>
+        <script src="Js/Canvas.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlaYUZpEk0ta5E_KLNTyf_YDJBNQIqXj4"></script>
+        <script src="Js/Map.js"></script>
+        <script src="Js/Affichage.js"></script>
+        <script src="Js/ElPatron.js"></script>
+	</body>
+
+</html>
